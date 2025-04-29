@@ -4,7 +4,7 @@ window.onload = () => {
         const wrapper = document.querySelector('.logo-wrapper');
 
         if (window.innerWidth <= 600) {
-    container.style.top = "13%"; /* <<< higher up for mobile */
+    container.style.top = "13%"; 
     wrapper.style.width = "150px";
 } else {
     container.style.top = "13%";
@@ -18,7 +18,7 @@ window.onload = () => {
 
             document.body.style.overflow = "auto";
 
-            // No scroll event! No fade-out needed.
+            
 
         }, 500); 
 
