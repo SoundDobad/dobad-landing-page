@@ -1,0 +1,139 @@
+/* Basic page setup */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: white;
+    overflow: hidden; /* Prevent scroll during initial animation */
+    font-family: Arial, sans-serif;
+}
+
+/* Logo container (floating, centered) */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: top 1s ease, transform 1s ease, width 1s ease;
+    background: linear-gradient(to bottom, white 70%, transparent 100%);
+    padding: 20px;
+    border-radius: 10px; /* optional */
+}
+
+/* Logo wrapper (controls size) */
+.logo-wrapper {
+    width: 300px; /* Start bigger */
+    transition: width 1s ease;
+}
+
+/* Main logo image */
+#logo {
+    width: 100%;
+    display: block;
+}
+
+/* Frog character */
+#frog {
+    position: absolute;
+    top: -13px; /* <-- Move frog down a bit to account for logo-container padding */
+    left: 0;
+    width: 100%;
+    height: auto;
+    animation: wiggle 1s infinite alternate;
+}
+
+/* Frog wiggle animation */
+@keyframes wiggle {
+    0% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+}
+
+/* Link section */
+.links {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; 
+    margin-top: 225px;
+    transition: opacity 1s ease;
+    flex-wrap: wrap;
+}
+
+.links.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Single icon link */
+.icon-item {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Icon image itself */
+.icon-link {
+    width: 120px; /* Default desktop size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover zoom on icon */
+.icon-link:hover {
+    transform: scale(1.1);
+}
+
+/* Label text under each icon */
+.icon-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .links {
+        flex-direction: column;
+        gap: 30px; /* Smaller space between stacked icons */
+        margin-top: 200px; /* Slightly less margin for phones */
+    }
+
+    .icon-link {
+        width: 80px; /* Smaller icons on mobile */
+    }
+
+    .logo-container {
+        top: 50%; /* Mobile starting position (logo lower) */
+    }
+
+    .logo-wrapper {
+        width: 150px; /* Mobile starting logo size */
+    }
+	
+	#frog {
+    top: -13px; /* <<< move frog UP on mobile */
+  }
+
+}
+
+.label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+}
+
+.description {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555; /* slightly gray to separate visually */
+}
